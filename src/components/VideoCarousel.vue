@@ -19,11 +19,11 @@
             <Slide
                 v-for="slide, index in movies"
                 :key="slide"
-                class="flex items-center object-cover text-white bg-transparent"
+                class="flex items-center bg-transparent"
             >
             <div
                 @click="$event => fullScreenVideo(index)"
-                class="object-cover h-[100%] hover:brightness-125 cursor-pointer"
+                class="w-full h-[100%] object-cover hover:brightness-125 cursor-pointer"
                 :class="
                     currentSlide !== index ? 'border-4 border-transparent' : 'border-4 border-white',
                     currentSlideObject(slide,index)
@@ -32,7 +32,7 @@
 
             <img 
                 style="user-select: none"
-                class="pointer-events-none h-[100%] z-[-1]"
+                class="pointer-events-none z-[-1] w-full h-full object-cover"
                 :src="'/images/'+slide.name+'.png'"
             >
             </div>
